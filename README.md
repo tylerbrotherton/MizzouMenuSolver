@@ -12,5 +12,13 @@ Yo, if Mizzou admin/professors is reading this, give me my research funding, plz
 
 This is how it works
 
+Solution "happy path"
+Loads Curl -> extract the data from the websites -> stores the relevent data -> closes Curl -> Load LMF -> display info/interactive chart -> delete data on local machine.
 
-Loads Curl -> extract the data from the websites -> stores the relevent data -> closes Curl -> Load LMF -> display info -> delete data on local machine.
+
+[Loads Curl -> extract the data from the websites -> stores the relevent data -> closes Curl] WebScrapper.cpp
+
+ [Load LMF -> display info/interactive chart-> save the menu of the data-> delete data on local machine.] Graphs.cpp
+
+ saving  the menu of the day
+ [:date].txt   in DD/MM/YYYY format
