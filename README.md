@@ -8,3 +8,9 @@ Additionally, C++ is the top 10 most popular programming langunges, but no profe
 I have a pet theory that no professor knows c++. They go directly from c->c#?
 
 Yo, if Mizzou admin/professors is reading this, give me my research funding, plz?
+
+
+This is how it works
+
+
+Loads Curl -> extract the data from the websites -> stores the relevent data -> closes Curl -> Load LMF -> display info -> delete data on local machine.
