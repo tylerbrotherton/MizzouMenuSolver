@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-int DsiplayGraphics(std::vector<std::string> items) {
+int displayGraphics(std::vector<std::string> items) {
     // -------------------------------------------------
     // Window setup
     // -------------------------------------------------
