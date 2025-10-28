@@ -15,7 +15,7 @@ static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* use
 }
 
 // Fetch the page – politely ask the internet for the menu.
-std::string fetch_page(const std::string& url) {
+std::string fetchPage(const std::string& url) {
     CURL* curl = curl_easy_init();                       // wake up the curl engine
     std::string page;
     if (curl) {
@@ -34,7 +34,7 @@ std::string fetch_page(const std::string& url) {
 }
 
 // Parse lines like “Wok IT" and "Buffalo chicken sliders"
-std::vector<std::pair<std::string, std::string>> parse_menu(const std::string& text) {
+std::vector<std::pair<std::string, std::string>> parseMenu(const std::string& text) {
     std::vector<std::pair<std::string, std::string>> items;
 
     //figure out context clue in menu?
@@ -48,6 +48,27 @@ std::vector<std::pair<std::string, std::string>> parse_menu(const std::string& t
     return items;
 }
 
+int isValid(int argc, char* argv[]){
+    if (argc != 2) {
+        std::cerr << "Usage: " << argv[0] << " <url-to-plaintext-menu>\n";
+        return 1; // no URL, no dinner
+    }
+
+    std::string page = fetchPage(argv[1]);               // fetch the feast
+    if (page.empty()) {                                  // empty plate?
+        std::cerr << "Couldn't fetch page – maybe the chef hid it.\n";
+        return 1;
+    }
+
+    auto menu = parseMenu(page);                         // slice the menu
+    if (menu.empty()) {                                  // nothing to eat?
+        std::cout << "No items found – the menu is on a diet.\n";
+        return 1;
+    }
+
+}
+
+/*  
 int main(int argc, char* argv[]) {
     if (argc != 2) {
         std::cerr << "Usage: " << argv[0] << " <url-to-plaintext-menu>\n";
@@ -71,3 +92,5 @@ int main(int argc, char* argv[]) {
         std::cout << "- " << name << " : $" << price << '\n';
     return 0; // happy tummy
 }
+
+*/
