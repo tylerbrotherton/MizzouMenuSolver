@@ -35,7 +35,7 @@ std::string fetchPage(const std::string& url) {
 
 // Parse lines like “Wok IT" and "Buffalo chicken sliders"
 std::vector<std::pair<std::string, std::string>> parseMenu(const std::string& text) {
-    std::vector<std::pair<std::string, std::string>> items;
+    std::vector<std::string> items;
 
     //figure out context clue in menu?
     //please figure out out to 
@@ -43,7 +43,7 @@ std::vector<std::pair<std::string, std::string>> parseMenu(const std::string& te
                     std::regex_constants::multiline); // two dots = ellipsis, three = menu line
     for (auto it = std::sregex_iterator(text.begin(), text.end(), line);
          it != std::sregex_iterator(); ++it) {
-        items.emplace_back((*it)[1].str(), (*it)[2].str()); // name, price – the dynamic duo
+        items.emplace_back((*it).str()); 
     }
     return items;
 }
