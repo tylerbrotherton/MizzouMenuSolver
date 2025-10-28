@@ -34,7 +34,7 @@ std::string fetchPage(const std::string& url) {
 }
 
 // Parse lines like “Wok IT" and "Buffalo chicken sliders"
-std::vector<std::pair<std::string, std::string>> parseMenu(const std::string& text) {
+std::vector<std::string> parseMenu(std::string& text) {
     std::vector<std::string> items;
 
     //figure out context clue in menu?
