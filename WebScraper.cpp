@@ -6,6 +6,7 @@
 #include <string>
 #include <regex>
 #include <curl/curl.h>
+#include "WebScrapper.h"
 
 // Gather data – the butler that never forgets a crumb.
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
