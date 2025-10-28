@@ -10,7 +10,7 @@
 // Gather data – the butler that never forgets a crumb.
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
     std::size_t total = size * nmemb;                     // size of this bite
-    static_cast<std::string*>(userp)->append(static_cast<char*>(contents), total);
+    static_cast<std::string*>(userp)->append(static_cast<char*>(contents));
     return total;                                        // all eaten, no leftovers
 }
 
