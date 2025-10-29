@@ -1,5 +1,8 @@
 # MizzouMenuSolver
-this is made by Tyler Brotherton
+
+DON'T compile/run the base code. The legality of this software is questionable?
+
+This is thought of and produced by Tyler Brotherton
 This program scraps the Mizzou dining hall sites and displays the menu and times that the dining halls are open. If you go to Mizzou, and want to know what the dining halls are serving, this is the program for you. 
 Currently the solution is to open 3 seperate tabs and click through boxes. I don't want to do that.
 
