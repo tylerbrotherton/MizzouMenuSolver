@@ -2,19 +2,26 @@
 #include <string>
 #include <vector>
 
-#include "WebScrapper.h"
-#include "Graphics.h"
+#include "WebScrapper.h" as wb
+#include "Graphics.h" as g
 
 int main(){
 
     //wait for regulatory approval?
     exit();
     //String diningHallsAtMizzou[3]= {"plaza-900-dining","the-mark-on-5th-street","the-restaurants-at-southwest"};
-
       
-    for(String i: diningHallsAtMizzou)
+    for(String i: diningHallsAtMizzou){
         std::vector<std::string> items;
-        items=fectpage("https:////dining.missouri.edu//locations//"+diningHallsAtMizzou.at(0)+'//');
-        int success=displayGraphics(items);
+        items=wb.fectpage("https:////dining.missouri.edu//locations//"+i+'//');
+        int success=g.displayGraphics(items);
         if(success==0) cout<<"Success for " <<i;
+    }
+
+    /*
+    *
+    * Do graphics?
+    *
+    */
+    
 }
