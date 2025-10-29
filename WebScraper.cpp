@@ -67,30 +67,3 @@ int isValid(int argc, char* argv[]){
     }
 
 }
-
-/*  
-int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <url-to-plaintext-menu>\n";
-        return 1; // no URL, no dinner
-    }
-
-    std::string page = fetch_page(argv[1]);               // fetch the feast
-    if (page.empty()) {                                   // empty plate?
-        std::cerr << "Couldn't fetch page – maybe the chef hid it.\n";
-        return 1;
-    }
-
-    auto menu = parse_menu(page);                         // slice the menu
-    if (menu.empty()) {                                   // nothing to eat?
-        std::cout << "No items found – the menu is on a diet.\n";
-        return 0;
-    }
-
-    std::cout << "Found menu items (and a few tasty jokes):\n";
-    for (const auto& [name, price] : menu)                // serve each dish
-        std::cout << "- " << name << " : $" << price << '\n';
-    return 0; // happy tummy
-}
-
-*/
