@@ -40,7 +40,7 @@ std::vector<std::string> parseMenu(std::string& text) {
 
     //figure out context clue in menu?
     //please figure out out to 
-     std::regex line(R"(^\s*([A-Za-z0-9 .,'&-]+?)\s+\.{2,}\s*\$?([\d\.]+)\s*$)",.
+     std::regex line("<li\b[^>]*>(.*?)<\/li>",.
                     std::regex_constants::multiline); // two dots = ellipsis, three = menu line
     for (auto it = std::sregex_iterator(text.begin(), text.end(), line);
          it != std::sregex_iterator(); ++it) {
