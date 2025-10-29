@@ -48,6 +48,7 @@ std::vector<std::string> parseMenu(std::string& text) {
     return items;
 }
 
+//1 is false, 0 is true.
 int isValid(int argc, char* argv[]){
     if (argc != 2) {
         std::cerr << "Usage: " << argv[0] << " <url-to-plaintext-menu>\n";
@@ -65,5 +66,5 @@ int isValid(int argc, char* argv[]){
         std::cout << "No items found – the menu is on a diet.\n";
         return 1;
     }
-
+    return 0;
 }
